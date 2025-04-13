@@ -1,23 +1,32 @@
-export function renderGallery(images) {
-  const gallery = document.querySelector('.gallery');
-
-  const markup = images
-    .map(
-      image => `
-      <a class="gallery-item" href="${image.largeImageURL}">
-        <div class="photo-card">
-          <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
-          <div class="info">
-            <p><b>Likes:</b> ${image.likes}</p>
-            <p><b>Views:</b> ${image.views}</p>
-            <p><b>Comments:</b> ${image.comments}</p>
-            <p><b>Downloads:</b> ${image.downloads}</p>
-          </div>
-        </div>
-      </a>
-    `
-    )
-    .join('');
-
-  gallery.innerHTML = markup;
-}
+export const createGalleryCardTemplate = imgArr => {
+    return imgArr.reduce((acc, el) => {
+        return (
+            acc +
+            `
+            <li class="gallery-card">
+              <a class="gallery-img-orig" href="${el.largeImageURL}">
+                <img class="gallery-img" src="${el.webformatURL}" alt="${el.tags}" />
+                <div class="img-data">
+                 <div class="img-data-column img-likes">
+                  <p class="img-title">Likes</p>
+                  <p class="img-value">${el.likes}</p>
+                 </div>
+                 <div class="img-data-column img-views">
+                  <p class="img-title">Views</p>
+                  <p class="img-value">${el.views}</p>
+                 </div>
+                 <div class="img-data-column img-comments">
+                  <p class="img-title">Comments</p>
+                  <p class="img-value">${el.comments}</p>
+                 </div>
+                  <div class="img-data-column img-downloads">
+                  <p class="img-title">Downloads</p>
+                  <p class="img-value">${el.downloads}</p>
+                 </div>
+                </div>
+              </a>
+            </li>
+           `
+        )
+    }, '');
+};
