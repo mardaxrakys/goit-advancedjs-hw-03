@@ -44,11 +44,11 @@
   align-items: center;
   gap: 10px;
   border-radius: 8px;
-  background: #4e75ff;
+  background: #2c5f1c;
 }
 
 .search-btn:hover {
-  background: #6c8cff;
+  background: #1e9b39fe;
 }
 
 .gallery {
