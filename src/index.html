@@ -5,25 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goit-advancedjs-hw-03</title>
     <link rel="stylesheet" href="./css/index.css" />
+
     <script type="module" src="./main.js" defer></script>
   </head>
   <body>
     <section class="gallery-section">
       <div class="container">
-        <form class="form" id="search-form">
-          <input
-            type="text"
-            name="query"
-            autocomplete="off"
-            placeholder="Search images..."
-            required
-          />
-          <button type="submit">Search</button>
+        <form class="search-form js-search-form">
+          <input class="search-input js-search-input" type="text" name="user_query" placeholder="Search images..." required />
+          <button class="search-btn" type="submit">Search</button>
         </form>
-
-        <ul class="gallery"></ul>
-        <span class="loader is-hidden">Loading...</span>
+        <ul class="gallery js-gallery"></ul>
+        <span class="loader is-hidden js-loader"></span>
       </div>
     </section>
-  </body>
 </html>
