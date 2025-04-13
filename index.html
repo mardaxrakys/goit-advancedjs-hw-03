@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>goit-advancedjs-hw-03</title>
-
     <script type="module" crossorigin src="/goit-advancedjs-hw-03/index.js"></script>
     <link rel="modulepreload" crossorigin href="/goit-advancedjs-hw-03/assets/vendor-B07T6_gy.js">
     <link rel="stylesheet" crossorigin href="/goit-advancedjs-hw-03/assets/index-gnhzRuR7.css">
@@ -12,12 +11,20 @@
   <body>
     <section class="gallery-section">
       <div class="container">
-        <form class="search-form js-search-form">
-          <input class="search-input js-search-input" type="text" name="user_query" placeholder="Search images..." required />
-          <button class="search-btn" type="submit">Search</button>
+        <form class="form" id="search-form">
+          <input
+            type="text"
+            name="query"
+            autocomplete="off"
+            placeholder="Search images..."
+            required
+          />
+          <button type="submit">Search</button>
         </form>
-        <ul class="gallery js-gallery"></ul>
-        <span class="loader is-hidden js-loader"></span>
+
+        <ul class="gallery"></ul>
+        <span class="loader is-hidden">Loading...</span>
       </div>
     </section>
+  </body>
 </html>
